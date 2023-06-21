@@ -7,12 +7,9 @@
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint src --ext js,jsx --report-unused-disable-directives --max-warnings 0",
-    "preview": "vite preview",
-    "webhint": "hint"
+    "preview": "vite preview"
   },
   "dependencies": {
-    "@babel/eslint-parser": "^7.22.5",
-    "@babel/preset-react": "^7.22.5",
     "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0",
     "@loadable/component": "^5.15.3",
@@ -25,7 +22,6 @@
     "@uidotdev/usehooks": "^2.0.1",
     "axios": "^1.4.0",
     "axios-auth-refresh": "^3.3.6",
-    "hint": "^7.1.9",
     "match-sorter": "^6.3.1",
     "nanoid": "^4.0.2",
     "prettier": "^2.8.8",
@@ -38,12 +34,19 @@
     "vite-plugin-image-optimizer": "^1.1.6"
   },
   "devDependencies": {
+    "@babel/core": "^7.22.5",
+    "@babel/eslint-parser": "^7.22.5",
+    "@babel/plugin-syntax-jsx": "^7.22.5",
+    "@babel/preset-react": "^7.22.5",
     "@types/react": "^18.2.13",
     "@types/react-dom": "^18.2.6",
+    "@vitejs/plugin-react": "^4.0.1",
     "@vitejs/plugin-react-swc": "^3.3.2",
     "eslint": "^8.43.0",
+    "eslint-config-airbnb": "^19.0.4",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-plugin-import": "^2.27.5",
+    "eslint-plugin-jsx-a11y": "^6.7.1",
     "eslint-plugin-react": "^7.32.2",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.1",
