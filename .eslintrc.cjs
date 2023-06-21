@@ -4,27 +4,24 @@ module.exports = {
     es6: true,
     jest: true,
   },
-  requireConfigFile: false,
-  babelOptions: {
-    presets: ["@babel/preset-react"],
-  },
-  parser: "@babel/eslint-parser",
+  parser: '@babel/eslint-parser',
   parserOptions: {
-    ecmaVersion: 2020,
-    sourceType: "module",
+    ecmaFeatures: {
+      jsx: true,
+    },
+    ecmaVersion: 2018,
+    sourceType: 'module',
+    babelOptions: {
+      presets: ['@babel/preset-react'],
+    },
   },
-  extends: ["airbnb-base"],
+  extends: ['airbnb', 'plugin:react/recommended'],
+  plugins: ['react'],
   rules: {
-    "no-shadow": "off",
-    "no-param-reassign": "off",
-    "eol-last": "off",
-    "import/extensions": [
-      1,
-      {
-        js: "always",
-        json: "always",
-      },
-    ],
+    'react/jsx-filename-extension': ['warn', { extensions: ['.js', '.jsx'] }],
+    'react/react-in-jsx-scope': 'off',
+    'import/no-unresolved': 'off',
+    'no-shadow': 'off',
   },
-  ignorePatterns: ["dist/", "build/"],
+  ignorePatterns: ['dist/', 'build/'],
 };
