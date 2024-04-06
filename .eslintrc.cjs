@@ -1,27 +1,40 @@
 module.exports = {
   env: {
     browser: true,
-    es6: true,
-    jest: true,
+    es2021: true,
   },
-  parser: '@babel/eslint-parser',
+  extends: [
+    'plugin:@typescript-eslint/recommended',
+    'plugin:react/recommended',
+    'airbnb',
+    'airbnb/hooks',
+  ],
+  overrides: [
+    {
+      env: {
+        node: true,
+      },
+      files: ['.eslintrc.{js,cjs}'],
+      parserOptions: {
+        sourceType: 'script',
+      },
+    },
+  ],
+  parser: '@typescript-eslint/parser',
   parserOptions: {
-    ecmaFeatures: {
-      jsx: true,
-    },
-    ecmaVersion: 2018,
+    ecmaVersion: 'latest',
     sourceType: 'module',
-    babelOptions: {
-      presets: ['@babel/preset-react'],
-    },
+    tsconfigRootDir: __dirname,
   },
-  extends: ['airbnb', 'plugin:react/recommended'],
-  plugins: ['react'],
+  plugins: ['@typescript-eslint', 'react'],
   rules: {
-    'react/jsx-filename-extension': ['warn', { extensions: ['.js', '.jsx'] }],
     'react/react-in-jsx-scope': 'off',
-    'import/no-unresolved': 'off',
-    'no-shadow': 'off',
+    'react/jsx-filename-extension': [
+      2,
+      { extensions: ['.js', '.jsx', '.ts', '.tsx'] },
+    ],
+    'import/prefer-default-export': 'off',
+    'jsx-quotes': ['error', 'prefer-single'],
+    'import/no-extraneous-dependencies': ['error', { devDependencies: true }],
   },
-  ignorePatterns: ['dist/', 'build/'],
 };
